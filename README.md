@@ -36,7 +36,7 @@ The XML response has the following structure:
         <FJD>2.447386</FJD>
         <MXN>18.330671</MXN>
         <STD>22424.560006</STD>
-        ...
+        . . .
     </rates>
 </rates>        
 ``` 
@@ -58,7 +58,7 @@ The JSON response has the following structure:
     "FJD": 2.447386,
     "MXN": 18.330671,
     "STD": 22424.560006,
-    ...
+    . . .
   }
 }
 ```
@@ -77,6 +77,7 @@ The JSON response has the following structure:
 ```
 
 ### Notes: 
+* The main data entity - ExchangeRatesDao is indexed by base currency given that we expect high requests volume. 
 * RabbitMQ is implemented in RatesFetchingServiceImpl
 * Data caching needs to be implemented for further preformance optimization
 * Virtual threads can be used for calling the external API when requesting data for multiple base currencies
